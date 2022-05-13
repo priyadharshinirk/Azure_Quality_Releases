@@ -4,7 +4,7 @@ variables:
   azureServiceConnectionId: 'MyServiceConnection195510'
   
   # TODO: Replace 'mywebapp193576' with the existing Web App name
-  webAppName: 'FakeRestAPI'
+  webAppName: 'FakeRestAPI195510'
 stages:
 - stage: Build
   jobs:
@@ -30,7 +30,7 @@ stages:
       artifact: drop-fakerestapi
 - stage:
   jobs:
-  - deployment: FakeRestAPI195510
+  - deployment: FakeRestAPI
     pool:
         name: myAgentPool
     environment: 'TEST'
