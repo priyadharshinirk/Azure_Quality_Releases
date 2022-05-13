@@ -1,7 +1,7 @@
 name: Azure Pipelines
 variables:
   python.version: '3.7.6'
-  azureServiceConnectionId: 'MyServiceConnection195071'
+  azureServiceConnectionId: 'MyServiceConnection195510'
   
   # TODO: Replace 'mywebapp193576' with the existing Web App name
   webAppName: 'FakeRestAPI'
