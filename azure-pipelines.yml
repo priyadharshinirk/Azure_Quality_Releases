@@ -30,7 +30,7 @@ stages:
       artifact: drop-fakerestapi
 - stage:
   jobs:
-  - deployment: FakeRestAPI
+  - deployment: FakeRestAPI195510
     pool:
         name: myAgentPool
     environment: 'TEST'
