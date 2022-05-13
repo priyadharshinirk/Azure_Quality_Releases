@@ -54,4 +54,5 @@ module "vm" {
   resource_type    = "vm"
   resource_group   = "Azuredevops"
   subnet_id        = "${module.network.subnet_id_test}"
+  publicip         ="${module.publicip.public_ip_address_id}"
 }
