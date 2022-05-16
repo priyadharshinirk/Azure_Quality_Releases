@@ -1,4 +1,5 @@
 # #!/usr/bin/env python
+import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 
@@ -13,6 +14,7 @@ def login (user, password):
     driver = webdriver.Chrome()
     print ('Browser started successfully. Navigating to the demo page to login.')
     driver.get('https://www.saucedemo.com/')
+    time.sleep(100)
 
 login('standard_user', 'secret_sauce')
 
