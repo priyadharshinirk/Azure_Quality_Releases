@@ -1,10 +1,10 @@
 name: Azure Pipelines
 variables:
   python.version: '3.7.6'
-  azureServiceConnectionId: 'MyServiceConnection195510'
+  azureServiceConnectionId: 'MyServiceConnection195746'
   
   # TODO: Replace 'mywebapp193576' with the existing Web App name
-  webAppName: 'FakeRestAPI195510'
+  webAppName: 'FakeRestAPI195746'
 stages:
 - stage: Build
   jobs:
@@ -21,7 +21,7 @@ stages:
     - task: ArchiveFiles@2
       displayName: 'Archive FakeRestAPI'
       inputs:
-        rootFolderOrFile: 'automatedtesting/jmeter/fakerestapi'
+        rootFolderOrFile: 'automatedtesting/fakerestapi'
         includeRootFolder: false
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip'
