@@ -1,5 +1,5 @@
 resource "azurerm_network_interface" "test" {
-  name                = "nic195510"
+  name                = "nic195746"
   location            = "${var.location}"
   resource_group_name = "${var.resource_group}"
 
@@ -11,22 +11,15 @@ resource "azurerm_network_interface" "test" {
   }
 }
 
-resource "tls_private_key" "example_ssh" {
-algorithm = "RSA"
-rsa_bits = 4096
-}
-
 resource "azurerm_linux_virtual_machine" "test" {
   name                = "${var.application_type}-${var.resource_type}"
   location            = "${var.location}"
   resource_group_name = "${var.resource_group}"
   size                = "Standard_D2s_v3"
   admin_username      = "azureuser"
+  admin_password      = "VmPassword@04"
   network_interface_ids = [azurerm_network_interface.test.id]
-  admin_ssh_key {
-    username   = "azureuser"
-    public_key = tls_private_key.example_ssh.public_key_openssh
-  }
+  disable_password_authentication = false
   os_disk {
     caching           = "ReadWrite"
     storage_account_type = "Standard_LRS"
